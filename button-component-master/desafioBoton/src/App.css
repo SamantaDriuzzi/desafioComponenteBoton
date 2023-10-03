@@ -8,3 +8,8 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
