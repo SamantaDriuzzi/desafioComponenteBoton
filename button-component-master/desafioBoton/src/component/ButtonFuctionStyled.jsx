@@ -1,4 +1,4 @@
-function getColor(variant, disabled, startIcon, endIcon, disableShadow) {
+function getColor(variant, disabled, startIcon, endIcon, disableShadow, size) {
   return variant === "outline"
     ? "#3d5afe"
     : variant === "text" && !disabled
@@ -9,7 +9,7 @@ function getColor(variant, disabled, startIcon, endIcon, disableShadow) {
     ? "#9E9E9E"
     : disabled && variant === "text"
     ? "#9E9E9E"
-    : startIcon === "local_grocery_store" || endIcon === "local_grocery_store"
+    : startIcon || endIcon || size
     ? "#FFF"
     : "#3f3f3f";
 }
@@ -18,7 +18,8 @@ function getBackgroundColor(
   disabled,
   startIcon,
   endIcon,
-  disableShadow
+  disableShadow,
+  size
 ) {
   return variant === "outline"
     ? "transparent"
@@ -28,7 +29,7 @@ function getBackgroundColor(
     ? "#3d5afe"
     : disabled
     ? "#e0e0e0"
-    : startIcon === "local_grocery_store" || endIcon === "local_grocery_store"
+    : startIcon || endIcon || size
     ? "#3d5afe"
     : "#e0e0e0";
 }
@@ -49,7 +50,8 @@ function getHoverBackgroundColor(
   disabled,
   disableShadow,
   startIcon,
-  endIcon
+  endIcon,
+  size
 ) {
   return variant === "outline"
     ? "rgba(41, 98, 255, 0.10)"
@@ -61,14 +63,37 @@ function getHoverBackgroundColor(
     ? "none"
     : disabled
     ? "none"
-    : startIcon === "local_grocery_store" || endIcon === "local_grocery_store"
+    : startIcon || endIcon || size
     ? "none"
     : "#aeaeae";
 }
+
+function getWidth(size) {
+  return size === "sm"
+    ? "73px"
+    : size === "md"
+    ? "81px"
+    : size === "lg"
+    ? "93px"
+    : "81px";
+}
+
+function getHeight(size) {
+  return size === "sm"
+    ? "32px"
+    : size === "md"
+    ? "36px"
+    : size === "lg"
+    ? "42px"
+    : "36px";
+}
+
 export {
   getColor,
   getBackgroundColor,
   getBorder,
   getBoxShadow,
   getHoverBackgroundColor,
+  getWidth,
+  getHeight,
 };

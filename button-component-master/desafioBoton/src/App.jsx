@@ -16,6 +16,9 @@ function App() {
         </Button>
         <Button startIcon="local_grocery_store">Botón</Button>
         <Button endIcon="local_grocery_store">Botón</Button>
+        <Button size={"sm"}>Botón</Button>
+        <Button size={"md"}>Botón</Button>
+        <Button size={"lg"}>Botón</Button>
       </div>
     </>
   );

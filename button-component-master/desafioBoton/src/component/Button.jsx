@@ -5,6 +5,8 @@ import {
   getHoverBackgroundColor,
   getColor,
   getBackgroundColor,
+  getWidth,
+  getHeight,
 } from "./ButtonFuctionStyled";
 import StyledButton from "./ButtonStyledComponent";
 
@@ -15,6 +17,7 @@ const Button = ({
   startIcon,
   endIcon,
   disableShadow,
+  size,
 }) => {
   Button.propTypes = {
     variant: PropTypes.string,
@@ -23,18 +26,22 @@ const Button = ({
     startIcon: PropTypes.string,
     endIcon: PropTypes.string,
     disableShadow: PropTypes.bool,
+    size: PropTypes.string,
   };
 
   // Definir estilos basados en las propiedades
   const styles = {
+    width: getWidth(size),
+    height: getHeight(size),
     backgroundColor: getBackgroundColor(
       variant,
       disabled,
       startIcon,
       endIcon,
-      disableShadow
+      disableShadow,
+      size
     ),
-    color: getColor(variant, disabled, startIcon, endIcon, disableShadow),
+    color: getColor(variant, disabled, startIcon, endIcon, disableShadow, size),
     border: getBorder(variant),
     boxShadow: getBoxShadow(variant, disableShadow),
     hoverBackgroundColor: getHoverBackgroundColor(
@@ -42,7 +49,8 @@ const Button = ({
       disabled,
       disableShadow,
       startIcon,
-      endIcon
+      endIcon,
+      size
     ),
   };
 
