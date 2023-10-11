@@ -1,5 +1,5 @@
 import "./App.css";
-import Button from "./component/Button";
+import Button from "./component/Button.jsx";
 
 function App() {
   return (
@@ -9,13 +9,13 @@ function App() {
         <Button>Default</Button>
         <Button variant={"outline"}>Outlined</Button>
         <Button variant={"text"}>Text</Button>
-        <Button disableshadow>Default</Button>
-        <Button disabled>Default-disabled</Button>
+        <Button disableShadow>disableshadow</Button>
+        <Button disabled>Disabled</Button>
         <Button variant={"text"} disabled>
           Text-disabled
         </Button>
-        <Button startIcon={"local_grocery_store"}>Botón</Button>
-        <Button endIcon={"local_grocery_store"}>Botón</Button>
+        <Button startIcon="local_grocery_store">Botón</Button>
+        <Button endIcon="local_grocery_store">Botón</Button>
       </div>
     </>
   );
