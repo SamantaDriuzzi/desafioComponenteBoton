@@ -43,18 +43,20 @@ function getBackgroundColor(
     : disabled || color === "default"
     ? "#e0e0e0"
     : startIcon || endIcon || size || color === "primary"
-    ? "#3d5afe"
+    ? "#2962FF"
     : color === "secondary"
     ? "#455A64"
     : "#e0e0e0";
 }
-function getBoxShadow(variant, disableShadow, color) {
+function getBoxShadow(variant, disableShadow, color, startIcon, endIcon) {
   return variant === "outline"
     ? "none"
     : variant === "text"
     ? "none"
     : disableShadow
     ? "none"
+    : startIcon || endIcon
+    ? "0px 2px 3px 0px rgba(0, 49, 202, 0.20)"
     : color === "primary"
     ? "0px 2px 3px 0px rgba(41, 98, 255, 0.20)"
     : color === "secondary"
