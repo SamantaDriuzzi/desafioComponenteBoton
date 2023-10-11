@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   display: flex;
-  width: 81px;
-  height: 36px;
   flex-shrink: 0;
   border-radius: 6px;
   text-align: center;
+  justify-content: center;
   font-family: "Noto Sans JP";
   font-size: 14px;
   font-style: normal;
@@ -15,7 +14,8 @@ const StyledButton = styled.button`
   box-sizing: border-box;
   padding: 10px;
   align-items: center;
-
+  width: ${(props) => props.styles.width};
+  height: ${(props) => props.styles.height};
   background-color: ${(props) => props.styles.backgroundColor};
   color: ${(props) => props.styles.color};
   border: ${(props) => props.styles.border};
