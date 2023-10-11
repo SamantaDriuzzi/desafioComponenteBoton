@@ -19,6 +19,9 @@ function App() {
         <Button size={"sm"}>Botón</Button>
         <Button size={"md"}>Botón</Button>
         <Button size={"lg"}>Botón</Button>
+        <Button color={"default"}>default</Button>
+        <Button color={"primary"}>primary</Button>
+        <Button color={"secondary"}>secondary</Button>
       </div>
     </>
   );
