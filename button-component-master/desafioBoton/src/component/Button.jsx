@@ -18,6 +18,7 @@ const Button = ({
   endIcon,
   disableShadow,
   size,
+  color,
 }) => {
   Button.propTypes = {
     variant: PropTypes.string,
@@ -27,6 +28,7 @@ const Button = ({
     endIcon: PropTypes.string,
     disableShadow: PropTypes.bool,
     size: PropTypes.string,
+    color: PropTypes.string,
   };
 
   // Definir estilos basados en las propiedades
@@ -39,9 +41,18 @@ const Button = ({
       startIcon,
       endIcon,
       disableShadow,
-      size
+      size,
+      color
     ),
-    color: getColor(variant, disabled, startIcon, endIcon, disableShadow, size),
+    color: getColor(
+      variant,
+      disabled,
+      startIcon,
+      endIcon,
+      disableShadow,
+      size,
+      color
+    ),
     border: getBorder(variant),
     boxShadow: getBoxShadow(variant, disableShadow),
     hoverBackgroundColor: getHoverBackgroundColor(
@@ -50,7 +61,8 @@ const Button = ({
       disableShadow,
       startIcon,
       endIcon,
-      size
+      size,
+      color
     ),
   };
 

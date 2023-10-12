@@ -1,4 +1,12 @@
-function getColor(variant, disabled, startIcon, endIcon, disableShadow, size) {
+function getColor(
+  variant,
+  disabled,
+  startIcon,
+  endIcon,
+  disableShadow,
+  size,
+  color
+) {
   return variant === "outline"
     ? "#3d5afe"
     : variant === "text" && !disabled
@@ -9,7 +17,11 @@ function getColor(variant, disabled, startIcon, endIcon, disableShadow, size) {
     ? "#9E9E9E"
     : disabled && variant === "text"
     ? "#9E9E9E"
-    : startIcon || endIcon || size
+    : startIcon ||
+      endIcon ||
+      size ||
+      color === "primary" ||
+      color === "secondary"
     ? "#FFF"
     : "#3f3f3f";
 }
@@ -19,7 +31,8 @@ function getBackgroundColor(
   startIcon,
   endIcon,
   disableShadow,
-  size
+  size,
+  color
 ) {
   return variant === "outline"
     ? "transparent"
@@ -27,20 +40,28 @@ function getBackgroundColor(
     ? "transparent"
     : disableShadow
     ? "#3d5afe"
-    : disabled
+    : disabled || color === "default"
     ? "#e0e0e0"
-    : startIcon || endIcon || size
-    ? "#3d5afe"
+    : startIcon || endIcon || size || color === "primary"
+    ? "#2962FF"
+    : color === "secondary"
+    ? "#455A64"
     : "#e0e0e0";
 }
-function getBoxShadow(variant, disableShadow) {
+function getBoxShadow(variant, disableShadow, color, startIcon, endIcon) {
   return variant === "outline"
     ? "none"
     : variant === "text"
     ? "none"
     : disableShadow
     ? "none"
-    : "0px 2px 3px 0px rgba(51, 51, 51, 0.2)";
+    : startIcon || endIcon
+    ? "0px 2px 3px 0px rgba(0, 49, 202, 0.20)"
+    : color === "primary"
+    ? "0px 2px 3px 0px rgba(41, 98, 255, 0.20)"
+    : color === "secondary"
+    ? "0px 2px 3px 0px rgba(69, 90, 100, 0.20)"
+    : "0px 2px 3px 0px rgba(51, 51, 51, 0.20)";
 }
 function getBorder(variant) {
   return variant === "outline" ? "1px solid #3d5afe" : "none";
@@ -51,7 +72,8 @@ function getHoverBackgroundColor(
   disableShadow,
   startIcon,
   endIcon,
-  size
+  size,
+  color
 ) {
   return variant === "outline"
     ? "rgba(41, 98, 255, 0.10)"
@@ -65,6 +87,10 @@ function getHoverBackgroundColor(
     ? "none"
     : startIcon || endIcon || size
     ? "none"
+    : color === "primary"
+    ? "#0039CB"
+    : color === "secondary"
+    ? "#1C313A"
     : "#aeaeae";
 }
 
