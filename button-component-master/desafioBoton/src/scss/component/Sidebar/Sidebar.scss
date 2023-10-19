@@ -1,0 +1,41 @@
+div {
+  background-color: #fafbfd;
+  width: 237px;
+
+  h2 {
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #090f31;
+    margin-left: 50px;
+
+    span {
+      color: #f7542e;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 90px 0px 0px 50px;
+
+    li {
+      a {
+        text-decoration: none;
+        color: #9e9e9e;
+        line-height: 20.27px;
+
+        &.active {
+          color: #090f31;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
