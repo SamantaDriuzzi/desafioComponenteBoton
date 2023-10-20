@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../scss/component/Sidebar/Sidebar.scss";
+import "../../scss/component/sidebar/Sidebar.scss";
 
 const Sidebar = () => {
   const [activeButton, setActiveButton] = useState(null);
