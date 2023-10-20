@@ -21,7 +21,8 @@ function getColor(
       endIcon ||
       size ||
       color === "primary" ||
-      color === "secondary"
+      color === "secondary" ||
+      color === "danger"
     ? "#FFF"
     : "#3f3f3f";
 }
@@ -46,6 +47,8 @@ function getBackgroundColor(
     ? "#2962FF"
     : color === "secondary"
     ? "#455A64"
+    : color === "danger"
+    ? "#D32F2F"
     : "#e0e0e0";
 }
 function getBoxShadow(variant, disableShadow, color, startIcon, endIcon) {
@@ -61,6 +64,8 @@ function getBoxShadow(variant, disableShadow, color, startIcon, endIcon) {
     ? "0px 2px 3px 0px rgba(41, 98, 255, 0.20)"
     : color === "secondary"
     ? "0px 2px 3px 0px rgba(69, 90, 100, 0.20)"
+    : color === "danger"
+    ? "0px 2px 3px 0px rgba(211, 47, 47, 0.20)"
     : "0px 2px 3px 0px rgba(51, 51, 51, 0.20)";
 }
 function getBorder(variant) {
@@ -91,6 +96,8 @@ function getHoverBackgroundColor(
     ? "#0039CB"
     : color === "secondary"
     ? "#1C313A"
+    : color === "danger"
+    ? "#9A0007"
     : "#aeaeae";
 }
 
