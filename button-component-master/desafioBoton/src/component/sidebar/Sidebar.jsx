@@ -18,7 +18,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div>
+    <div className="sidebar-container">
       <h2>
         <span>Dev</span>challenges.io
       </h2>

@@ -1,0 +1,31 @@
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+
+  h3 {
+    font-family: poppins;
+    color: #4f4f4f;
+  }
+  .buttons {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .group-botton {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 70px;
+
+      div {
+        p {
+          font-family: Ubuntu Mono;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 12px;
+        }
+      }
+    }
+  }
+}
